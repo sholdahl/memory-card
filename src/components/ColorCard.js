@@ -1,14 +1,16 @@
 import React from "react";
 
 const ColorCard = (props) => {
-    const {colorCode, colorName} = props
+  const { colorCode, colorName, clicked, handleClick, index } = props;
 
-    return (
-      <div className="col-6 col-m-4 col-l-3 col-xl-2 color-card" data-id={colorCode}>
-          <div className="color-display" style={{background: colorCode}}></div>
-          <h4 className="color-name">{colorName}</h4>
+  return (
+    <div className="color-card-wrapper col-6 col-md-4 col-lg-3 col-xl-2">
+      <div className="color-card" data-clicked={clicked} data-index={index} onClick={handleClick}>
+        <div className="color-display" style={{ background: colorCode }}></div>
+        <h4 className="color-name">{colorName}</h4>
       </div>
-    );
-  };
-  
-  export default ColorCard;
+    </div>
+  );
+};
+
+export default ColorCard;
